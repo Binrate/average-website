@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/index.css">
+  <script src="js/index.js" defer></script>
+  <script src="js/functions.js" defer></script>
+  <script src="js/pages.js" defer></script>
+  <script src="js/jslink.js" defer></script>
+  <script src="js/calcAverage.js" defer></script>
+  <script src="js/convGrade.js" defer></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <div class="main page">
+
+    <h3 class="playfair">Grade Toolbox</h3>
+    <h6 style="margin-top: 10px;">Calculate averages, convert grades, and much more...</h6>
+    <div class="options">
+      <button class="option" onclick="calcAverage()">Calculate an average</button>
+      <button class="option" onclick="convGradePage()">Convert Grades</button>
+    </div>
+  </div>
+
+  <div class="calc page hidden">
+    <h3 class="playfair">Calculate An Average</h3>
+    <div class="bringNoteOn">
+      <h6 class="bringNoteOnLabel">Bring note on:</h6>
+      <input type="text" value="/20" class="bringNoteOnWhat settingsField">
+    </div>
+    <h6 style="margin-top: 10px;" onclick="addGrade(this)" class="newGrade"><i class="fa fa-plus-circle addGradeButton"></i>Add Grade</h6>
+    <div class="grades">
+      <template class="gradeTemplate">
+        <div class="grade">
+          <input type="number" min="0" class="what">
+            <span>/</span>
+          <input type="number" min="0" class="on">
+        </div>
+      </template>
+    </div>
+
+    <button class="option calculateButton" onclick="calculateTheAverage()">Calculate</button>
+    <h4 class="playfair hidden averageIs">Your average is:</h4>
+    <h3 class="finalAvg hidden">0.00</h3>
+    <button class="option hidden calcAgain" onclick="calcAgain()">Calculate Again</button>
+  </div>
+
+  <div class="convGrade"></div>
+</body>
+</html>
